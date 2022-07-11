@@ -1,6 +1,4 @@
-#include <bits/stdc++.h>
-using namespace std;
-
+// using inbuilt function
 int main(){
     int n; cin>>n;
     int a[n];
@@ -11,4 +9,20 @@ int main(){
 }
 
 
+//Without inbuilt function
+int main(){
+    int n; cin>>n;
+    int a[n];
+    for(int i=0; i<n; i++) cin>>a[i];
+    int i=0, j=n-1;
+    while(i<j){
+        a[i] = a[i]+a[j];
+        a[j] = a[i]-a[j];
+        a[i] = a[i]-a[j];
+        i++;
+        j--;
+    }
+    for(int k:a) cout<<k<<" ";
+    return 0;
+}
 
