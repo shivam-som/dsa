@@ -1,0 +1,16 @@
+//without any inbuilt function
+int INT_MAX=2147483647;
+int kthSmallest(int arr[], int l, int r, int k){
+    int min=0, ind;
+    for(int i=0; i<k; i++){
+        min=INT_MAX, ind=-1;
+        for(int j=0; j<=r; j++){
+            if(arr[j]<min){
+                min=arr[j];
+                ind=j;
+            }
+        }
+        arr[ind]=INT_MAX;
+    }
+    return min;
+}
